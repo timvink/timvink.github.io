@@ -1,0 +1,26 @@
+site_name: Personal website Tim Vink
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+
+
+plugins:
+  - blog:
+      blog_toc: false
+      post_url_format: "{slug}"
+
+nav:
+  - Blog:
+    - blog/index.md 
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
