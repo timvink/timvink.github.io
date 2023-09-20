@@ -20,5 +20,8 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install -r requirements.txt
+      - run: 
+          pip install -r requirements.txt &&\
+          apt-get install pngquant &&\
+          pip install "mkdocs-material[imaging]"
       - run: mkdocs gh-deploy --force
