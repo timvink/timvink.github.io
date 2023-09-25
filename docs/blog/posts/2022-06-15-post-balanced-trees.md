@@ -26,7 +26,7 @@ In case you don't have the theory top of mind: Random Forests work by ensembling
 The real magic is in the bootstrapping. Rows (number of observations $n$) are sampled _with replacement_ until you have another set of size $n$. This means the same row can occurs multiple times in your sample. In fact, each bootstrap sample can be expected to contain $\approx$ 1/3 of observations ([source](https://stats.stackexchange.com/questions/88980/why-on-average-does-each-bootstrap-sample-contain-roughly-two-thirds-of-observat?lq=1)). As an aside, Random Forests also take a random subsample _without replacement_ of your columns (number of features $m$). This method is known as Random Patches ([read more](https://scikit-learn.org/stable/modules/ensemble.html#bagging-meta-estimator)). Empirically a [good value for classification problems](https://scikit-learn.org/stable/modules/ensemble.html#parameters) is `max_features = sqrt(n_features)`.
 
 <figure class="figure">
-  <img src="/assets/images/posts/experiment_bootstrap/bootstrap.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  <img src="../../assets/images/posts/experiment_bootstrap/bootstrap.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
   <figcaption class="figure-caption">Illustration of bootstrapping (<a href="https://uc-r.github.io/bootstrapping">source</a>)</figcaption>
 </figure>
 
@@ -272,7 +272,7 @@ Another common strategy is to adjust the probability threshold for a classifier 
 
 If you look at the results when varying the imbalance ratios the scores the differences are marginal. `OverUnderSampling` does seems to have a slight edge, but I'm sure if you spend a bit of time on hyperparameter tuning of each variant the differences would be even smaller.
 
-![test performance](/assets/images/posts/experiment_bootstrap/test.png)
+![test performance](../../assets/images/posts/experiment_bootstrap/test.png)
 
 ## Conclusion
 

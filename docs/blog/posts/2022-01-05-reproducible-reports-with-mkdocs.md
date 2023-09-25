@@ -27,7 +27,7 @@ We want to combine all of these artifacts into a coherent MkDocs documentation s
 
 Schematically:
 
-<img src="/assets/images/posts/reproducible_mkdocs/diagram.svg" width="100%"/>
+<img src="../../assets/images/posts/reproducible_mkdocs/diagram.svg" width="100%"/>
 
 ## Generating artifacts on build
 

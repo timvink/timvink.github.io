@@ -5,6 +5,30 @@ theme:
   custom_dir: overrides
   features:
     - navigation.tabs
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      accent: light blue
+      primary: black
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: light blue
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+hooks:
+  - scripts/mkdocs_hooks.py
+
+watch:
+  - overrides/
 
 extra:
   analytics:
@@ -49,3 +73,4 @@ extra_javascript:
   - js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+

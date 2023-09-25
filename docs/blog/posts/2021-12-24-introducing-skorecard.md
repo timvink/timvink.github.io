@@ -49,7 +49,7 @@ When using bucketing in an actual use case like credit decision modelling, there
 bucketer.fit_interactive(X, y)
 ```
 
-![interactive bucketing](/assets/images/posts/skorecard/dash_app_unsupervised_bucketer.png)
+![interactive bucketing](../../assets/images/posts/skorecard/dash_app_unsupervised_bucketer.png)
 
 ## Weight of Evidence encoding can improve performance
 
@@ -84,7 +84,7 @@ from skorecard import Skorecard
 baseline_model = Skorecard()
 ```
 
-I ran a benchmark using the [UCI Adult](https://archive.ics.uci.edu/ml/datasets/adult), [Breast Cancer](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html), [skorecard UCI creditcard](https://ing-bank.github.io/skorecard/api/datasets/load_uci_credit_card/#skorecard.datasets.load_uci_credit_card), [UCI heart disease](https://www.kaggle.com/ronitf/heart-disease-uci) and [Kaggle Telco customer churn](*https://www.kaggle.com/blastchar/telco-customer-churn*) datasets. We compare a [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) with [one hot encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) of categorical columns (lr-ohe), a variant with [ordinal encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html) of categoricals (lr-ordinal), a typical [RandomForest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) with 100 trees  (rf-100), a [XGBoost](https://xgboost.readthedocs.io/en/latest/python/python_intro.html) model (xgb) and of course a [Skorecard](https://github.com/ing-bank/skorecard) model with default settings.
+I ran a benchmark using the [UCI Adult](https://archive.ics.uci.edu/ml/datasets/adult), [Breast Cancer](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html), [skorecard UCI creditcard](https://ing-bank.github.io/skorecard/api/datasets/load_uci_credit_card/#skorecard.datasets.load_uci_credit_card), [UCI heart disease](https://www.kaggle.com/ronitf/heart-disease-uci) and [Kaggle Telco customer churn](https://www.kaggle.com/blastchar/telco-customer-churn*) datasets. We compare a [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) with [one hot encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) of categorical columns (lr-ohe), a variant with [ordinal encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html) of categoricals (lr-ordinal), a typical [RandomForest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) with 100 trees  (rf-100), a [XGBoost](https://xgboost.readthedocs.io/en/latest/python/python_intro.html) model (xgb) and of course a [Skorecard](https://github.com/ing-bank/skorecard) model with default settings.
 
 | dataset_name   | model_name   |   test_score_mean |
 |----------------|--------------|-------------------|

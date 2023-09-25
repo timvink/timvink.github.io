@@ -29,7 +29,7 @@ Now we simply need to determine the nearest coordinate for each address, and tak
 
 The first thing I tried was great circles: the shortest distance between any two points on a sphere.
 
-![great circle example](/assets/images/great_circle.png)
+![great circle example](../../assets/images/great_circle.png)
 
 The great circle distance $d$ is also known as the [haversine distance](https://en.wikipedia.org/wiki/Haversine_formula), given by:
 
@@ -61,7 +61,7 @@ Coordinates are expressed as degrees; where [latitude](https://en.wikipedia.org/
 
 [Longitude](https://en.wikipedia.org/wiki/Longitude) ($\lambda$) is the east-west line, where it is agreed that 0 degrees is the meridian passing through Greenwich, England. The longitude ranges from -180° west to +180° east. Using coordinates and the radius of the earth, you can point to any place on earth. Determining the longitude is much harder however. Only in 1612 did Galileo Galilei devise a method using the exact time and the orbits of the moons of Jupiter. Finally in 1773 John Harrison invented the [marine chronometer](https://en.wikipedia.org/wiki/Marine_chronometer), a portable timepiece accurate enough to allow ships at sea to determine their longitude.
 
-![](/assets/images/lat-lon.png)
+![](../../assets/images/lat-lon.png)
 
 ## Attempt 2: Euclidian distance
 
@@ -148,7 +148,7 @@ def find_population(lat, lon):
 A benchmark showed that instead of 8 sec, a search now took ~1.5 ms, more than 5000x faster! Actually, searching this tree structure has `O(log(n))` complexity.
 Some manual checks suggested the lost accuracy was only very marginal. A visual confirmation of a random coordinate in Warsaw shows that the algoritm is working as intented:
 
-![warsaw example](/assets/images/warsaw-coordinate.png)
+![warsaw example](../../assets/images/warsaw-coordinate.png)
 
 ## Conclusion
 

@@ -52,7 +52,7 @@ p2 <- tibble(x = sample_means) %>%
 grid.arrange(p1, p2, nrow = 1)
 ```
 
-![samples](/assets/images/clt_post/clt_theorem.png)
+![samples](../../assets/images/clt_post/clt_theorem.png)
 
 Here we assume we know the entire true population of 100.000 values that have a clearly skewed [weibull](https://en.wikipedia.org/wiki/Weibull_distribution) distribution (left plot).
 If we sample 100 values, record the average, and repeat 1000 times, we can start to see that distribution of sampled means looks like a [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) (right plot), with the mean of those sampled means approaching the actual mean of our population. Still confused? Check out this [interactive visualization](http://mfviz.com/central-limit/) of the central limit theorem.
@@ -69,7 +69,7 @@ tibble(sample_size = c(50,100,500,1000)) %>%
   facet_wrap(~ sample_size, nrow = 1, scales = "free_y")
 ```
 
-![samples](/assets/images/clt_post/clt_sample_size.png)
+![samples](../../assets/images/clt_post/clt_sample_size.png)
 
 So as you increase your sample size, your sampled means will be *closer* to the the true mean of our population (in this case 0.9042). And because the sampled means are normally distributed, you can actually estimate from a sample what the expected distance is between the sampled mean and the true population mean. This is called the estimated [standard error](https://en.wikipedia.org/wiki/Standard_error) ($SE$) and calculated as:
 
@@ -99,7 +99,7 @@ $$
 \mu \pm 2 \cdot \operatorname{SE}\left(\mu\right)
 $$
 
-![](/assets/images/clt_post/Standard_deviation_diagram.svg)
+![](../../assets/images/clt_post/Standard_deviation_diagram.svg)
 
 You might know this as the *95% confidence interval*. We need to be more precise however: exactly how many standard deviations (aka standard errors) is our sample mean
 (1.2 %) away from our population mean (1 %)? This is called the *z-score* (a.k.a. [standard score](https://en.wikipedia.org/wiki/Standard_score)) and is given by:
@@ -115,11 +115,11 @@ $$
 
 As you can see from the formula and the graph below (from wikipedia), the z-score is a nice normalized metric to say how far away our sampled mean is from the population mean.
 
-![](/assets/images/clt_post/The_Normal_Distribution.svg)
+![](../../assets/images/clt_post/The_Normal_Distribution.svg)
 
 Let's calculate the z-score for our A/B test. In this case we know of the 'true' population (our A scenario), so we do not have to estimate the standard error $\sigma$ from a sample but can calculate it from the logs. So let's say we measured that 1% of visitor click buy, with a 0.15% standard deviation. So $\mu$ = 1% and $x$ is 1.2%, so the z-score is (0.012 - 0.01) / 0.0015 = 1.333. This means we now know that our new landing page has an average conversion that is 1.333 standard deviations away from our normal landing page. But how probable is that? Again, because our means are normally distributed, we need to know how much of the distribution is on or past our z-score; i.e. we need to know the area under the curve paste the z-score; i.e. we need to know the probability $P$ that a value from distribution $Z$ is equal to more than our z-score $z$. This probability is called the *p-value*, and can be seen in the graph below. ([source](https://faculty.elgin.edu/dkernler/statistics/ch10/10-2.html))
 
-![](/assets/images/clt_post/p-value.jpg)
+![](../../assets/images/clt_post/p-value.jpg)
 
 It's hard to compute the p-value by hand because we need to integrate to find the area under the curve. We could look up pre-computed values (f.e. see this [z-score table](http://www.z-table.com/)), but it's easiest to compute using R:
 
@@ -392,7 +392,7 @@ plot_distribution <- function(data, feature_name) {
 samples %>% plot_distribution("b_wt")
 ```
 
-![samples](/assets/images/clt_post/posterior_wt.png)
+![samples](../../assets/images/clt_post/posterior_wt.png)
 
 Here we can visually see that the most likely value of weight is ~ -3, but also that given the `mtcars` dataset, we are very confident the coefficient is between -6 and 0. This plot is made so often that it is built in: `brms::plot(fit)`.
 
@@ -435,7 +435,7 @@ tibble(
   ggtitle("Shift in posterior density of weight wt")
 ```
 
-![samples](/assets/images/clt_post/shift_distri.png)
+![samples](../../assets/images/clt_post/shift_distri.png)
 
 Not much of a shift, but you get the point ;) Do more research to define better priors!
 
@@ -445,7 +445,7 @@ One of the upsides of having distributions instead of exact estimates for our co
 plot(marginal_effects(fit2, effects = "wt"))
 ```
 
-![samples](/assets/images/clt_post/marginal_effects_wt.png)
+![samples](../../assets/images/clt_post/marginal_effects_wt.png)
 
 Finally, it can be hard to define good priors. It [is recommend](https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations) to scale predictors and outcomes in order to make it easier to define priors. Selecting the feature set can also be challenging. In our non-bayesian LR we explained features selection can be done by adding or dropping non-significant features (features that are likely to be zero) using forward- or backward selection. In the bayesian world there are other techniques you can explore for this, such as [bayesian model averaging](https://www.coursera.org/lecture/bayesian/bayesian-model-averaging-adz4Y).
 
@@ -468,6 +468,6 @@ Bayes's Theorem also has downsides:
 
 I believe bayesian models can really help for certain types of problems, especially because it offers you a way to encode your domain knowledge. In the end we still don't know for sure exactly how our features influence the milage in cars, but we've learned techniques to communicate and visualize our estimates and their uncertainty.
 
-Hope you've learned something new. [Let me know](/about) if you have any feedback!
+Hope you've learned something new. [Let me know](../../about.md) if you have any feedback!
 
 If you're interested: [code for this blogpost](https://gitlab.com/snippets/1855201)

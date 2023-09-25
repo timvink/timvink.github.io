@@ -1,6 +1,8 @@
 ---
 date: 2022-12-19 8:00:00
 slug: databricks-query-speed
+authors:
+  - timvink
 ---
 
 # Speeding up databricks SQL queries

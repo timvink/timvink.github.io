@@ -59,7 +59,7 @@ st.dataframe(metrics)
 
 There are many other components I could add (see [Streamlit API reference](https://docs.streamlit.io/en/stable/api.html#display-text)). I added a matplotlib plot to visualize the threshold setting. You can see the whole project github: [timvink/demo_streamlit_threshold_classifier](https://github.com/timvink/demo_streamlit_threshold_classifier). Here's what it looks like:
 
-![demo streamlit app](/assets/images/posts/streamlit_demo.gif)
+![demo streamlit app](../../assets/images/posts/streamlit_demo.gif)
 
 *[use the demo app live](https://share.streamlit.io/timvink/demo_streamlit_threshold_classifier/app.py)*
 
