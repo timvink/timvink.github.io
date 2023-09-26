@@ -1,4 +1,4 @@
-site_name: Personal website Tim Vink
+site_name: TimVink.nl
 
 theme:
   name: material
@@ -59,6 +59,8 @@ nav:
   - about.md
 
 markdown_extensions:
+  - abbr
+  - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -68,9 +70,14 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_javascript:
-  - js/mathjax.js
+  - assets/js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
+extra_css:
+  - assets/stylesheets/extra.css
