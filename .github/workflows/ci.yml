@@ -20,8 +20,11 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: pngquant
+          version: 1.0
       - run: 
           pip install -r requirements.txt &&\
-          sudo apt install -y pngquant &&\
           pip install "mkdocs-material[imaging]"
       - run: mkdocs gh-deploy --force
