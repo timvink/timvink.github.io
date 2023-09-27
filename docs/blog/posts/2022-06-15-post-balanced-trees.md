@@ -1,6 +1,8 @@
 ---
 date: 2022-06-15 8:00:00
 slug: post-balanced-trees
+authors:
+  - timvink
 ---
 
 # Adjusting the bootstrap in Random Forest

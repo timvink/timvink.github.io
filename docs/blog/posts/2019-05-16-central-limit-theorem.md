@@ -1,6 +1,8 @@
 ---
 date: 2019-05-16 7:00:00
 slug: central-limit-theorem
+authors:
+  - timvink
 ---
 
 # From Central Limit Theorem to Bayes's Theorem via Linear Regression

@@ -1,6 +1,8 @@
 ---
 date: 2022-09-19 8:00:00
 slug: is-xgboost-all-we-need
+authors:
+  - timvink
 ---
 
 # Is XGBoost really all we need?

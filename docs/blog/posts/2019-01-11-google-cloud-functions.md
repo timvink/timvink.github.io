@@ -1,6 +1,8 @@
 ---
 date: 2019-01-11
 slug: google-cloud-functions
+authors:
+  - timvink
 ---
 
 # How to develop Python Google Cloud Functions

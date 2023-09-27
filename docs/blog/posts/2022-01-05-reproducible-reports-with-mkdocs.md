@@ -1,5 +1,7 @@
 ---
 date: 2022-01-19 13:00:00
+authors:
+  - timvink
 ---
 
 # Reproducible Reports with MkDocs

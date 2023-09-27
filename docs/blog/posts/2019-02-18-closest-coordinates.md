@@ -1,6 +1,8 @@
 ---
 date: 2019-02-18
 slug: closest-coordinates
+authors:
+  - timvink
 ---
 
 # Quickly finding closest coordinates using K-D-Trees

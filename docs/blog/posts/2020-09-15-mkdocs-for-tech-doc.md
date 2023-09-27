@@ -1,6 +1,8 @@
 ---
 date: 2020-09-15 7:00:00
 slug: mkdocs-for-tech-doc
+authors:
+  - timvink
 ---
 
 # Using MkDocs for technical reporting

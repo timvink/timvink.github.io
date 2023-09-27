@@ -30,3 +30,9 @@
     transform: translateY(0);
   }
 }
+
+/* mailchimp signup form on blog page */
+#mc_embed_signup{
+  clear:left; 
+  width: 400px;
+}

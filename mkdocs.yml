@@ -33,7 +33,20 @@ watch:
 extra:
   analytics:
     provider: google
-    property: G-XXXXXXXXXX
+    property: G-343493717
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback!
 
 site_url: https://timvink.nl
 
@@ -51,6 +64,18 @@ plugins:
       categories:
         - categories
         - tags
+  - redirects:
+      redirect_maps:
+        'google-cloud-functions.md': 'blog/posts/2019-01-11-google-cloud-functions.md'
+        'closest-coordinates.md' : 'blog/posts/2019-02-18-closest-coordinates.md'
+        'central-limit-theorem.md' : 'blog/posts/2019-05-16-central-limit-theorem.md'
+        'streamlit-threshold-app.md' : 'blog/posts/2020-07-17-streamlit-threshold-app.md'
+        'mkdocs-for-tech-doc.md' : 'blog/posts/2020-09-15-mkdocs-for-tech-doc.md'
+        'introducing-skorecard.md' : 'blog/posts/2021-12-24-introducing-skorecard.md'
+        'reproducible-reports-with-mkdocs.md' : 'blog/posts/2022-01-05-reproducible-reports-with-mkdocs.md'
+        'post-balanced-trees.md' : 'blog/posts/2022-06-15-post-balanced-trees.md'
+        'is-xgboost-all-we-need.md' : 'blog/posts/2022-09-19-is-xgboost-all-we-need.md'
+        'databricks-query-speed.md' : 'blog/posts/2022-12-18-databricks-query-speed.md'
 
 nav:
   - Homepage: index.md

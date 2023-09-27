@@ -1,6 +1,8 @@
 ---
 date: 2020-07-17 7:00:00
 slug: streamlit-threshold-app
+authors:
+  - timvink
 ---
 
 # Using streamlit to set the threshold for a classifier

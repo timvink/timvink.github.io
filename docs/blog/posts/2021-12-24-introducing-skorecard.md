@@ -1,6 +1,8 @@
 ---
 date: 2021-12-24 13:00:00
 slug: introducing-skorecard
+authors:
+  - timvink
 ---
 
 # Introducing Skorecard for building better logistic regression models
