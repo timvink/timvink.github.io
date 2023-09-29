@@ -8,6 +8,8 @@ theme:
   custom_dir: overrides
   features:
     - navigation.tabs
+  icon:
+      logo: material/bird
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -50,8 +52,6 @@ extra:
           data: 0
           note: >- 
             Thanks for your feedback!
-
-site_url: https://timvink.nl
 
 plugins:
   - search
