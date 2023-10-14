@@ -60,6 +60,7 @@ plugins:
       post_url_format: "{slug}"
       post_excerpt: required
   - social
+  - tags
   - rss:
       match_path: blog/posts/.* 
       date_from_meta:
@@ -89,6 +90,7 @@ nav:
 markdown_extensions:
   - abbr
   - attr_list
+  - footnotes
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
