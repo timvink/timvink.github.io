@@ -38,7 +38,7 @@ watch:
 extra:
   analytics:
     provider: google
-    property: G-343493717
+    property: G-2CM8V82P6Z
     feedback:
       title: Was this page helpful?
       ratings:
