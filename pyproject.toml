@@ -1,0 +1,18 @@
+[project]
+name = "personal-site"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs-charts-plugin>=0.0.11",
+    "mkdocs-material[imaging]>=9.5.36",
+    "mkdocs-redirects>=1.2.1",
+    "mkdocs-rss-plugin>=1.15.0",
+    "pandas>=2.2.3",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ipykernel>=6.29.5",
+]

@@ -1,3 +1,5 @@
 install:
-	pip install -r requirements.txt
-	pip install "mkdocs-material[imaging]"
+	uv export -o requirements.txt --no-hashes
+
+docs:
+	uv run mkdocs serve

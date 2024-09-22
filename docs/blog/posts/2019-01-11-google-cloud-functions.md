@@ -180,7 +180,7 @@ if __name__ == '__main__':
     app.run()
 ```
 
-Notice I set an environment variable pointing to a JSON. Our `google-cloud-storage` package uses these credentials to authenticate. We want to use the same permissons as the cloud function would have at runtime:
+Notice I set an environment variable pointing to a JSON. Our `google-cloud-storage` package uses these credentials to authenticate. We want to use the same permissions as the cloud function would have at runtime:
 
 > At runtime, Cloud Functions uses the service account PROJECT_ID@appspot.gserviceaccount.com, which has the Editor role on the project. You can change the roles of this service account to limit or extend the permissions for your running functions. ([source](https://cloud.google.com/functions/docs/concepts/iam))
 

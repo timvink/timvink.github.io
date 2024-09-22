@@ -296,7 +296,7 @@ $$
 P(A | B)=\frac{P(B | A) P(A)}{P(B)}
 $$
 
-Here we are expressing 'events' occuring using *conditional probability*: the probability that an event will happen given that another event took place. So Bayes Theorem in words reads: "the probability of A given that B have occurred is calculated as the unconditioned probability of A occurring multiplied by the probability of B occurring if A happened, divided by the unconditioned probability of B." ([source](https://towardsdatascience.com/linear-and-bayesian-modelling-in-r-predicting-movie-popularity-6c8ef0a44184))
+Here we are expressing 'events' occurring using *conditional probability*: the probability that an event will happen given that another event took place. So Bayes Theorem in words reads: "the probability of A given that B have occurred is calculated as the unconditioned probability of A occurring multiplied by the probability of B occurring if A happened, divided by the unconditioned probability of B." ([source](https://towardsdatascience.com/linear-and-bayesian-modelling-in-r-predicting-movie-popularity-6c8ef0a44184))
 
 You can also put this another way:
 
@@ -325,7 +325,7 @@ $$
 \begin{aligned} y_{i} & \sim \mathcal{N}\left(\mu_{i}, \sigma\right) \\ \mu_{i} &=\alpha+\beta X_{i} \end{aligned}
 $$
 
-So the miles per gallon `mpg` of a single car $y_{i}$ can be modelled using a normal distribution $\mathcal{N}$ parametrized by mean $u_{i}$. which is a linear function of $X$ parametrized by intercept $\alpha$, coefficients $\beta$ and standard deviation $\sigma$ ([see this SO post](https://stats.stackexchange.com/a/252608)). Remember we will have as many coeffients $\beta$ as we have features (columns) in our dataset $X$.
+So the miles per gallon `mpg` of a single car $y_{i}$ can be modelled using a normal distribution $\mathcal{N}$ parametrized by mean $u_{i}$. which is a linear function of $X$ parametrized by intercept $\alpha$, coefficients $\beta$ and standard deviation $\sigma$ ([see this SO post](https://stats.stackexchange.com/a/252608)). Remember we will have as many coefficients $\beta$ as we have features (columns) in our dataset $X$.
 
 Now to find the optimal values of these parameters we will use [maximum likelihood estimation](https://stats.stackexchange.com/questions/112451/maximum-likelihood-estimation-mle-in-layman-terms). Interestingly this is the same as estimating these values using Ordinary Least Squares estimation (see notes [Andrew Ng, cs229](http://cs229.stanford.edu/notes/cs229-notes1.pdf)).
 
@@ -336,7 +336,7 @@ $$
 p(\alpha,\beta,\sigma \mid y) \propto p(y \mid \alpha,\beta,\sigma) p(\alpha,\beta,\sigma)
 $$
 
-The priors also need to be defined as distributions. Here you need to carefully consider encode what you know as a distribution. As an example, for gas milage I know that recent cars have a `mpg` between 10 and 40 ([source](https://www.cars.com/articles/best-and-worst-gas-mileage-2018-1420698621218/)). Our model probably won't be able to explain everything, so my prior for the intercept $\alpha$ will be a normal distribution with mean 25 and standard deviation 15: $N(25,15)$. We need to set priors for every coefficient in $\beta$ and the standard deviation $\sigma$ of our probabilistic model as well.
+The priors also need to be defined as distributions. Here you need to carefully consider encode what you know as a distribution. As an example, for gas mileage I know that recent cars have a `mpg` between 10 and 40 ([source](https://www.cars.com/articles/best-and-worst-gas-mileage-2018-1420698621218/)). Our model probably won't be able to explain everything, so my prior for the intercept $\alpha$ will be a normal distribution with mean 25 and standard deviation 15: $N(25,15)$. We need to set priors for every coefficient in $\beta$ and the standard deviation $\sigma$ of our probabilistic model as well.
 
 What do you do if you have no clue on how to set your priors? I don't like cars enough to be an expert. We can say that we have no clue by using very uninformative priors (also known as [flat](https://www.quora.com/What-is-a-flat-prior-in-the-Bayesian-method) or [diffuse](https://en.wikipedia.org/wiki/Prior_probability) priors). An example would be a very wide uniform distribution like $U(-10^{99},10^{99})$.
 
@@ -368,7 +368,7 @@ fixef(fit)
 #> am1        2.9189454 1.50775195  0.002281527  6.04845493
 ```
 
-Notice that the estimates are very very similar to our earlier OLS estimation. This is because `brms` uses "an improper flat prior over the reals" (see `vignette("brms_overview")`) by default. Because we used very uninformative priors what we see is basically the estimate the maximum likelihood of a probability distribution, which is the same als the OLS estimation. We can see the distributions by plotting the samples from the posterior marginal densities. `brms` offers plotting functionality, but let's extract the samples and do it manually:
+Notice that the estimates are very very similar to our earlier OLS estimation. This is because `brms` uses "an improper flat prior over the reals" (see `vignette("brms_overview")`) by default. Because we used very uninformative priors what we see is basically the estimate the maximum likelihood of a probability distribution, which is the same also the OLS estimation. We can see the distributions by plotting the samples from the posterior marginal densities. `brms` offers plotting functionality, but let's extract the samples and do it manually:
 
 ```r
 # Get MCMC Samples for each parameter
@@ -441,7 +441,7 @@ tibble(
 
 Not much of a shift, but you get the point ;) Do more research to define better priors!
 
-One of the upsides of having distributions instead of exact estimates for our coeffients is that we can build many visualizations showing our uncertainties in estimations and predictions. The `bmrs` package has a lot built in, and the [tidybayes](http://mjskay.github.io/tidybayes/) offers many more. As an example, here is a plot of how weight `wt` influence the miles per gallon `mpg`, including our 95% uncertainty interval:
+One of the upsides of having distributions instead of exact estimates for our coefficients is that we can build many visualizations showing our uncertainties in estimations and predictions. The `bmrs` package has a lot built in, and the [tidybayes](http://mjskay.github.io/tidybayes/) offers many more. As an example, here is a plot of how weight `wt` influence the miles per gallon `mpg`, including our 95% uncertainty interval:
 
 ```r
 plot(marginal_effects(fit2, effects = "wt"))
@@ -468,7 +468,7 @@ Bayes's Theorem also has downsides:
 - Calculating $\text{likelihood} * \text{prior}$ is slow. MCMC Sampling requires a lot of computation.
 - MCMC Sampling does not always converge.
 
-I believe bayesian models can really help for certain types of problems, especially because it offers you a way to encode your domain knowledge. In the end we still don't know for sure exactly how our features influence the milage in cars, but we've learned techniques to communicate and visualize our estimates and their uncertainty.
+I believe bayesian models can really help for certain types of problems, especially because it offers you a way to encode your domain knowledge. In the end we still don't know for sure exactly how our features influence the mileage in cars, but we've learned techniques to communicate and visualize our estimates and their uncertainty.
 
 Hope you've learned something new. [Let me know](../../about.md) if you have any feedback!
 

@@ -7,7 +7,7 @@ authors:
 
 # Quickly finding closest coordinates using K-D-Trees
 
-This post will demonstrate how to quickly find for a given coordinate (latitude and longitude), the closest coordinate out of a list of other coordinates using K-D-Trees and the Euclidian distance.
+This post will demonstrate how to quickly find for a given coordinate (latitude and longitude), the closest coordinate out of a list of other coordinates using K-D-Trees and the Euclidean distance.
 
 <!-- more -->
 
@@ -65,9 +65,9 @@ Coordinates are expressed as degrees; where [latitude](https://en.wikipedia.org/
 
 ![](../../assets/images/lat-lon.png)
 
-## Attempt 2: Euclidian distance
+## Attempt 2: Euclidean distance
 
-Now that we understand coordinates, what if we simplify a bit and calculate a straight line from coordinate A to coordinate B, in 3D space? This is called the [euclidian distance](https://en.wikipedia.org/wiki/Euclidean_distance) and is both easy and fast to calculate.
+Now that we understand coordinates, what if we simplify a bit and calculate a straight line from coordinate A to coordinate B, in 3D space? This is called the [euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) and is both easy and fast to calculate.
 
 In order to use the Euclidean distance we’ll need to convert the latitude and longitude coordinates to the Cartesian plane; e.g. a x, y and z coordinate. To do that, we'll need to make some assumptions:
 
@@ -121,7 +121,7 @@ we will still be checking 60k place coordinates for every address coordinates. S
 
 ## Finally: K-dimensional trees
 
-We can use a [k-dimensional tree](https://en.wikipedia.org/wiki/K-d_tree) to organize our points in our 3-dimensional space. This is a data structure from computer science that can help with searches over multidimensional keys. [Scipy has KDtree implemented](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html), and for searches it uses euclidian distance by default (p=2) ! Let's build our tree data structure and a function to search it:
+We can use a [k-dimensional tree](https://en.wikipedia.org/wiki/K-d_tree) to organize our points in our 3-dimensional space. This is a data structure from computer science that can help with searches over multidimensional keys. [Scipy has KDtree implemented](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html), and for searches it uses euclidean distance by default (p=2) ! Let's build our tree data structure and a function to search it:
 
 ```python
 from scipy import spatial
@@ -148,7 +148,7 @@ def find_population(lat, lon):
 ```
 
 A benchmark showed that instead of 8 sec, a search now took ~1.5 ms, more than 5000x faster! Actually, searching this tree structure has `O(log(n))` complexity.
-Some manual checks suggested the lost accuracy was only very marginal. A visual confirmation of a random coordinate in Warsaw shows that the algoritm is working as intented:
+Some manual checks suggested the lost accuracy was only very marginal. A visual confirmation of a random coordinate in Warsaw shows that the algorithm is working as intented:
 
 ![warsaw example](../../assets/images/warsaw-coordinate.png)
 
