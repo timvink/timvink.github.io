@@ -7,6 +7,8 @@ hide:
 
 # About
 
+<img src="/assets/images/tim.jfif" style = "width: 300px; padding: 1em; float: right; border-radius: 50%;"/>
+
 I’m a data literate digital native. 
 I dream about a future where technology will help create an abundant future for mankind. 
 Technology is changing the world for the better. 
@@ -16,7 +18,7 @@ I have 11 years of experience building machine learning models, of which 6 years
 
 <p>You can contact me at <a href="mailto:vinktim@gmail.com">vinktim@gmail.com</a>.</p>
 
-<img src="/assets/images/timvink.png" style = "width: 300px; padding: 1em;"/>
+
 
 ## Open source projects
 
